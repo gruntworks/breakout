@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 var direction = Vector2.ZERO
+signal out_of_screen
+signal collided
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,4 +17,8 @@ func _process(delta):
 		var reflect = collision.remainder.bounce(collision.normal)
 		direction = direction.bounce(collision.normal)
 		move_and_collide(reflect)
+		if(collision):
+			emit_signal("collided", collision.collider)
 
+func _on_VisibilityNotifier2D_screen_exited():
+	emit_signal("out_of_screen")
