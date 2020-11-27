@@ -22,9 +22,11 @@ func _input(ev):
 
 
 func _on_Ball_collided(collider):
-	print(collider)
-	for item in $Levels.get_child(0).get_children():
-#		print(item.get_child(0).get_children())
-#		print(collider, item)
-		if(item == collider):
-			item.queue_free()
+	print(collider.name)
+	if collider.name != 'Walls' and collider.name != 'Player':
+		for item in $Levels.get_child(0).get_children():
+			if(item == collider):
+				$Audio/HitBrick.play()
+				item.queue_free()
+	else:
+		$Audio/HitWall.play()

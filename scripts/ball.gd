@@ -19,6 +19,7 @@ func _process(delta):
 		move_and_collide(reflect)
 		if(collision):
 			emit_signal("collided", collision.collider)
+			
 
 func _on_VisibilityNotifier2D_screen_exited():
 	emit_signal("out_of_screen")

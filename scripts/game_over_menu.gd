@@ -28,11 +28,13 @@ func display_game_over_menu():
 	$Menu.show()
 	$Menu/CenterContainer/VBoxContainer/ResumeButton.hide()
 	$Menu/CenterContainer/VBoxContainer/PlayAgainButton.show()
+	$Menu/CenterContainer/VBoxContainer/MainMenuButton.show()
 	$Menu/CenterContainer/VBoxContainer/ExitButton.show()
 	
 func display_pause_menu():
 	$Menu.show()
 	$Menu/CenterContainer/VBoxContainer/ResumeButton.show()
+	$Menu/CenterContainer/VBoxContainer/MainMenuButton.show()
 	$Menu/CenterContainer/VBoxContainer/ExitButton.show()
 	
 
