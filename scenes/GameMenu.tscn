@@ -1,22 +1,29 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/button_background.png" type="Texture" id=1]
-[ext_resource path="res://assets/Steinberg.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/button_background_hover.png" type="Texture" id=3]
-[ext_resource path="res://scripts/game_over_menu.gd" type="Script" id=4]
-[ext_resource path="res://scenes/FadeIn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/button_background_hover.png" type="Texture" id=2]
+[ext_resource path="res://scenes/FadeIn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Steinberg.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scripts/game_over_menu.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
 use_filter = true
 extra_spacing_top = 4
 extra_spacing_char = 2
-font_data = ExtResource( 2 )
+font_data = ExtResource( 4 )
 
-[node name="GameOverMenu" type="CanvasLayer"]
-script = ExtResource( 4 )
+[sub_resource type="DynamicFont" id=2]
+size = 38
+outline_size = 1
+outline_color = Color( 0.533333, 0.878431, 0.988235, 1 )
+font_data = ExtResource( 4 )
+
+[node name="GameMenu" type="CanvasLayer"]
+script = ExtResource( 5 )
 
 [node name="Menu" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -48,13 +55,14 @@ __meta__ = {
 }
 
 [node name="PlayAgainButton" type="TextureButton" parent="Menu/CenterContainer/VBoxContainer"]
+pause_mode = 2
 visible = false
 margin_right = 160.0
 margin_bottom = 50.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 1 )
-texture_hover = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="Menu/CenterContainer/VBoxContainer/PlayAgainButton"]
 anchor_right = 1.0
@@ -75,13 +83,34 @@ margin_bottom = 50.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 1 )
-texture_hover = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="Menu/CenterContainer/VBoxContainer/ResumeButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
 text = "RESUME"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextLevelButton" type="TextureButton" parent="Menu/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 54.0
+margin_right = 160.0
+margin_bottom = 104.0
+size_flags_horizontal = 4
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Menu/CenterContainer/VBoxContainer/NextLevelButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "NEXT LEVEL"
 align = 1
 valign = 1
 __meta__ = {
@@ -96,33 +125,13 @@ margin_bottom = 50.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 1 )
-texture_hover = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="Menu/CenterContainer/VBoxContainer/MainMenuButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
 text = "MAIN MENU"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NextLevelButton" type="TextureButton" parent="Menu/CenterContainer/VBoxContainer"]
-visible = false
-margin_right = 160.0
-margin_bottom = 50.0
-size_flags_horizontal = 4
-texture_normal = ExtResource( 1 )
-texture_pressed = ExtResource( 1 )
-texture_hover = ExtResource( 3 )
-
-[node name="Label" type="Label" parent="Menu/CenterContainer/VBoxContainer/NextLevelButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 1 )
-text = "NEXT"
 align = 1
 valign = 1
 __meta__ = {
@@ -137,7 +146,7 @@ margin_bottom = 50.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 1 )
-texture_hover = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="Menu/CenterContainer/VBoxContainer/ExitButton"]
 anchor_right = 1.0
@@ -150,10 +159,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FadeIn" parent="Menu" instance=ExtResource( 5 )]
+[node name="FadeIn" parent="Menu" instance=ExtResource( 3 )]
+
+[node name="LevelPassed" type="RichTextLabel" parent="Menu"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -148.0
+margin_top = 166.0
+margin_right = 148.0
+margin_bottom = 213.0
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 0 )
+bbcode_enabled = true
+bbcode_text = "[wave]LEVEL CLEARED[/wave]"
+text = "LEVEL CLEARED"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/PlayAgainButton" to="." method="_on_PlayAgainButton_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
-[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="fade_finished" from="Menu/FadeIn" to="." method="_on_FadeIn_fade_finished"]

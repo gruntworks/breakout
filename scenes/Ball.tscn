@@ -4,9 +4,10 @@
 [ext_resource path="res://scripts/ball.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 23.4497
+radius = 24.7823
 
 [node name="Ball" type="KinematicBody2D"]
+collision_mask = 0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

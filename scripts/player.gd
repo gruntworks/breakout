@@ -19,3 +19,4 @@ func _process(delta):
 			velocity = velocity * speed
 
 		position += velocity * delta
+	
