@@ -10,5 +10,9 @@ func level_up():
 	
 func get_level():
 	var level = load("res://levels/level_" + str(current_level) + ".tscn")
-	return(level.instance());
+	
+	if level != null:
+		return(level.instance());
+	else:
+		return(null)
 

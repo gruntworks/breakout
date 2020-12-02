@@ -6,8 +6,8 @@
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=4]
 [ext_resource path="res://scenes/FadeIn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/backgrounds/cloud_bg.png" type="Texture" id=6]
-[ext_resource path="res://assets/sound/button_hover.wav" type="AudioStream" id=7]
-[ext_resource path="res://assets/sound/button_click.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sound/retro_hover.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sound/select_click.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/backgrounds/clouds.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]

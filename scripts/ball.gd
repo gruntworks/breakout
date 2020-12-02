@@ -7,7 +7,7 @@ export var speed: float = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	direction = Vector2(-200, -300) * speed
+	direction = Vector2(-200, 300) * speed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -21,6 +21,8 @@ func _process(delta):
 			if(collision and collision.collider.has_method("destroyItem")):
 				collision.collider.destroyItem()
 			
-
+func reset_vector():
+	direction = Vector2(-200, 300) * speed
+	
 func _on_VisibilityNotifier2D_screen_exited():
 	emit_signal("out_of_screen")

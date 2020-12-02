@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/button_hover.wav-34dbc5cae4d0da8231fc81abcf032d7f.sample"
+path="res://.import/select_click.wav-868a377584d9d736b343767e0e693d56.sample"
 
 [deps]
 
-source_file="res://assets/sound/button_hover.wav"
-dest_files=[ "res://.import/button_hover.wav-34dbc5cae4d0da8231fc81abcf032d7f.sample" ]
+source_file="res://assets/sound/select_click.wav"
+dest_files=[ "res://.import/select_click.wav-868a377584d9d736b343767e0e693d56.sample" ]
 
 [params]
 

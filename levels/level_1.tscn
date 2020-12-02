@@ -1,12 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/Brick.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/backgrounds/01.png" type="Texture" id=2]
 
 [node name="Level_1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_scale = Vector2( 0.64, 0.666 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -14,5 +17,109 @@ __meta__ = {
 [node name="Breakables" type="Node2D" parent="."]
 
 [node name="Brick12" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 384, 296 )
+position = Vector2( 256, 192 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick13" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 768, 192 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick14" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 704, 192 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick15" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 640, 192 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick16" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 576, 192 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick17" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 512, 192 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick18" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 448, 192 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick19" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 384, 192 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick20" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 320, 192 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick21" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 256, 128 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick22" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 768, 128 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick23" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 704, 128 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick24" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 640, 128 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick25" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 576, 128 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick26" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 512, 128 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick27" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 448, 128 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick28" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 384, 128 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick29" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 320, 128 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick30" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 256, 64 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick31" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 768, 64 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick32" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 704, 64 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick33" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 640, 64 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick34" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 576, 64 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick35" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 512, 64 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick36" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 448, 64 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick37" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 384, 64 )
+scale = Vector2( 3, 3 )
+
+[node name="Brick38" parent="Breakables" instance=ExtResource( 1 )]
+position = Vector2( 320, 64 )
 scale = Vector2( 3, 3 )
