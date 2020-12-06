@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/button_background.png" type="Texture" id=1]
 [ext_resource path="res://assets/Steinberg.ttf" type="DynamicFontData" id=2]
@@ -9,9 +9,11 @@
 [ext_resource path="res://assets/sound/retro_hover.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/sound/select_click.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/backgrounds/clouds.png" type="Texture" id=9]
+[ext_resource path="res://assets/button2_background.png" type="Texture" id=10]
+[ext_resource path="res://assets/button2_background_hover.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
-size = 26
+size = 24
 use_filter = true
 extra_spacing_top = 4
 extra_spacing_char = 2
@@ -36,20 +38,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu_Background" type="ColorRect" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -100.0
-margin_top = -75.0
-margin_right = 100.0
-margin_bottom = 75.0
-color = Color( 0, 0, 0, 0.364706 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CloudsNode2" type="Node2D" parent="."]
 
 [node name="Clouds2" type="TextureRect" parent="CloudsNode2"]
@@ -70,31 +58,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Menu_Background" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -116.0
+margin_right = 120.0
+margin_bottom = 108.0
+color = Color( 0, 0, 0, 0.364706 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu_Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 432.0
-margin_top = 248.0
-margin_right = 592.0
-margin_bottom = 352.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_Background/CenterContainer"]
+margin_left = 18.0
+margin_top = 22.0
+margin_right = 222.0
+margin_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="TextureButton" parent="CenterContainer/VBoxContainer"]
-margin_right = 160.0
+[node name="Play" type="TextureButton" parent="Menu_Background/CenterContainer/VBoxContainer"]
+margin_left = 22.0
+margin_right = 182.0
 margin_bottom = 50.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 1 )
 texture_hover = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/PlayButton"]
+[node name="Label" type="Label" parent="Menu_Background/CenterContainer/VBoxContainer/Play"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
@@ -105,16 +113,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Exit Button" type="TextureButton" parent="CenterContainer/VBoxContainer"]
-margin_top = 54.0
-margin_right = 160.0
-margin_bottom = 104.0
+[node name="LevelSelect" type="TextureButton" parent="Menu_Background/CenterContainer/VBoxContainer"]
+margin_top = 65.0
+margin_right = 204.0
+margin_bottom = 115.0
+size_flags_horizontal = 4
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="Menu_Background/CenterContainer/VBoxContainer/LevelSelect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "SELECT LEVEL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="Menu_Background/CenterContainer/VBoxContainer"]
+margin_left = 22.0
+margin_top = 130.0
+margin_right = 182.0
+margin_bottom = 180.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 1 )
 texture_hover = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Exit Button"]
+[node name="Label" type="Label" parent="Menu_Background/CenterContainer/VBoxContainer/Exit"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
@@ -149,12 +178,13 @@ __meta__ = {
 
 [node name="ButtonHover" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 7 )
-volume_db = 4.026
+volume_db = 2.0
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 8 )
-[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_mouse_entered"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Exit Button" to="." method="_on_Exit_Button_mouse_entered"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Exit Button" to="." method="_on_Exit_Button_pressed"]
+[connection signal="mouse_entered" from="Menu_Background/CenterContainer/VBoxContainer/Play" to="." method="_on_PlayButton_mouse_entered"]
+[connection signal="pressed" from="Menu_Background/CenterContainer/VBoxContainer/Play" to="." method="_on_PlayButton_pressed"]
+[connection signal="mouse_entered" from="Menu_Background/CenterContainer/VBoxContainer/LevelSelect" to="." method="_on_PlayButton_mouse_entered"]
+[connection signal="mouse_entered" from="Menu_Background/CenterContainer/VBoxContainer/Exit" to="." method="_on_Exit_Button_mouse_entered"]
+[connection signal="pressed" from="Menu_Background/CenterContainer/VBoxContainer/Exit" to="." method="_on_Exit_Button_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

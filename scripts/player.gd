@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not get_parent().game_over:
+	if not get_parent().game_over && get_parent().game_running:
 		var velocity = Vector2()
 		move_and_collide(velocity)
 		if Input.is_action_pressed("ui_right"):

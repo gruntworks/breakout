@@ -5,6 +5,9 @@ var menu_opened = false;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Menu.hide()
+	for button in get_tree().get_nodes_in_group("menu_buttons"):
+		button.connect("mouse_entered", self, "_on_menu_button_hover", [button])
+		button.connect("pressed", self, "_on_menu_button_click", [button])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -16,6 +19,7 @@ func _input(event):
 		display_pause_menu()
 
 func _on_ExitButton_pressed():
+	yield($ButtonClickAudio, "finished")
 	get_tree().quit()
 	
 func _on_PlayAgainButton_pressed():
@@ -26,10 +30,17 @@ func _on_ResumeButton_pressed():
 	get_tree().paused = false
 		
 func _on_MainMenuButton_pressed():
+	yield($ButtonClickAudio, "finished")
 	get_tree().change_scene("res://scenes/MainMenu.tscn")
 
 func _on_NextLevelButton_pressed():
 	get_parent().to_next_level()
+
+func _on_menu_button_hover(_button):
+	$ButtonHoverAudio.play()
+	
+func _on_menu_button_click(_button):
+	$ButtonClickAudio.play()
 	
 func hide_menu():
 	menu_opened = false
