@@ -40,3 +40,8 @@ func _on_PlayButton_mouse_entered() -> void:
 
 func _on_Exit_Button_mouse_entered() -> void:
 	$Audio/ButtonHover.play()
+
+
+func _on_LevelSelect_pressed() -> void:
+	if get_tree().change_scene("res://scenes/LevelSelect.tscn") != OK:
+		print("Level Select scene failed to load")

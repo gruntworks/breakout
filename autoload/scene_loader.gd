@@ -1,7 +1,7 @@
 extends Node
 
-var current_level = 1
-var total_scene_levels = 2
+var current_level: int = 1
+var total_scene_levels: int = 2
 
 func level_up() -> void:
 	if current_level <= total_scene_levels:

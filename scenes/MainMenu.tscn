@@ -185,6 +185,7 @@ stream = ExtResource( 8 )
 [connection signal="mouse_entered" from="Menu_Background/CenterContainer/VBoxContainer/Play" to="." method="_on_PlayButton_mouse_entered"]
 [connection signal="pressed" from="Menu_Background/CenterContainer/VBoxContainer/Play" to="." method="_on_PlayButton_pressed"]
 [connection signal="mouse_entered" from="Menu_Background/CenterContainer/VBoxContainer/LevelSelect" to="." method="_on_PlayButton_mouse_entered"]
+[connection signal="pressed" from="Menu_Background/CenterContainer/VBoxContainer/LevelSelect" to="." method="_on_LevelSelect_pressed"]
 [connection signal="mouse_entered" from="Menu_Background/CenterContainer/VBoxContainer/Exit" to="." method="_on_Exit_Button_mouse_entered"]
 [connection signal="pressed" from="Menu_Background/CenterContainer/VBoxContainer/Exit" to="." method="_on_Exit_Button_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
