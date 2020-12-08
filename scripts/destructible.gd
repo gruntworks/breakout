@@ -2,10 +2,10 @@ extends StaticBody2D
 
 export var audio_on_destroy: AudioStream
 
-func _ready():
+func _ready() -> void:
 	$onDestroyAudio.stream = audio_on_destroy
 
-func destroyItem():
+func destroyItem() -> void:
 	set_collision_mask_bit(0, false)
 	$onDestroyAudio.play()
 	if get_node_or_null("Animation"):

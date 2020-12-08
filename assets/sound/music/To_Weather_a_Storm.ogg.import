@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/To_Weather_a_Storm.ogg-e4908d5b87710b4ed3c5c39631dfcc53.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/To_Weather_a_Storm.ogg"
+dest_files=[ "res://.import/To_Weather_a_Storm.ogg-e4908d5b87710b4ed3c5c39631dfcc53.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

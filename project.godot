@@ -21,8 +21,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-MusicController="*res://autoload/MusicController.tscn"
-LOADER="*res://autoload/SceneLoader.gd"
+JUKEBOX="*res://autoload/MusicController.tscn"
+LOADER="*res://autoload/scene_loader.gd"
 
 [display]
 

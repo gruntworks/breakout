@@ -1,16 +1,15 @@
 extends KinematicBody2D
 
-var speed
+var speed: int
+var direction: KinematicCollision2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	speed = 600
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta) -> void:
 	if not get_parent().game_over && get_parent().game_running:
-		var velocity = Vector2()
-		move_and_collide(velocity)
+		var velocity: Vector2 = Vector2()
+		direction = move_and_collide(velocity)
 		if Input.is_action_pressed("ui_right"):
 			velocity.x += 1
 		if Input.is_action_pressed("ui_left"):

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Outlaws_Farewell_pt2.ogg-f5f4ff1f953f8540fb17ae4e08259241.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/Outlaws_Farewell_pt2.ogg"
+dest_files=[ "res://.import/Outlaws_Farewell_pt2.ogg-f5f4ff1f953f8540fb17ae4e08259241.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

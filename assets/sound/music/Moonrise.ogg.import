@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Moonrise.ogg-21d01045e4d246b004fcfecd6e467e44.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/Moonrise.ogg"
+dest_files=[ "res://.import/Moonrise.ogg-21d01045e4d246b004fcfecd6e467e44.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,15 +1,13 @@
 extends Node
 
-onready var level_1 = preload("res://levels/level_1.tscn")
-onready var level_2 = preload("res://levels/level_2.tscn")
-
 var current_level = 1
 var total_scene_levels = 2
 
-func level_up():
-	current_level += 1
+func level_up() -> void:
+	if current_level <= total_scene_levels:
+		current_level += 1
 	
-func get_level():
+func get_level() -> Node:
 	if current_level > total_scene_levels:
 		return null
 	else:

@@ -7,7 +7,7 @@ func _ready():
 	clouds_offset = $CloudsNode.position
 	_offset_clouds(get_viewport().get_mouse_position()) #Avoid movement glitch
 
-func _input(event):
+func _input(event) -> void:
 	if event is InputEventMouseMotion:
 		_offset_clouds(event.position)
 
@@ -17,14 +17,15 @@ func _on_PlayButton_pressed() -> void:
 	$FadeIn.show()
 	$FadeIn.fade_in()
 
-func _offset_clouds(position):
+func _offset_clouds(position: Vector2) -> void:
 	clouds_offset.x = - position.x / get_viewport().size.x * cloud_move_multiplier
 	clouds_offset.y = - position.y / get_viewport().size.y * cloud_move_multiplier
 	$CloudsNode.set_position(clouds_offset)
 	$CloudsNode2.set_position(clouds_offset * 2.0)
 
 func _on_FadeIn_fade_finished() -> void:
-	get_tree().change_scene("res://scenes/Main.tscn");
+	if get_tree().change_scene("res://scenes/Main.tscn") != OK:
+		print("Main scene load failed")
 
 
 func _on_Exit_Button_pressed() -> void:

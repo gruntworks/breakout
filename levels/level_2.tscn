@@ -16,52 +16,6 @@ __meta__ = {
 
 [node name="Breakables" type="Node2D" parent="."]
 
-[node name="Bubble" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 312, 112 )
-
-[node name="Bubble2" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 408, 112 )
-
-[node name="Bubble3" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 504, 112 )
-
-[node name="Bubble4" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 608, 112 )
-
-[node name="Bubble5" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 712, 112 )
-
-[node name="Bubble6" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 312, 192 )
-
-[node name="Bubble7" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 408, 192 )
-
-[node name="Bubble8" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 504, 192 )
-
-[node name="Bubble9" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 608, 192 )
-
-[node name="Bubble10" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 712, 192 )
-
 [node name="Bubble11" parent="Breakables" instance=ExtResource( 1 )]
 position = Vector2( 312, 272 )
-rotation = -0.0019838
-
-[node name="Bubble12" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 408, 272 )
-rotation = -0.0019838
-
-[node name="Bubble13" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 504, 272 )
-rotation = -0.0019838
-
-[node name="Bubble14" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 608, 272 )
-rotation = -0.0019838
-
-[node name="Bubble15" parent="Breakables" instance=ExtResource( 1 )]
-position = Vector2( 712, 272 )
 rotation = -0.0019838
