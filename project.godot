@@ -29,6 +29,10 @@ LOADER="*res://autoload/scene_loader.gd"
 window/size/fullscreen=true
 window/stretch/mode="2d"
 
+[gdnative]
+
+singletons=[  ]
+
 [layer_names]
 
 2d_render/layer_1="Ball"
