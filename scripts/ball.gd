@@ -25,3 +25,4 @@ func reset_vector() -> void:
 	
 func _on_VisibilityNotifier2D_screen_exited() -> void:
 	emit_signal("out_of_screen")
+	queue_free()

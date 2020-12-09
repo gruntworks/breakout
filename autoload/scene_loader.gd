@@ -1,16 +1,13 @@
 extends Node
 
 var current_level: int = 1
-var total_scene_levels: int = 2
+const TOTAL_LEVELS = 2
 
 func level_up() -> void:
-	if current_level <= total_scene_levels:
+	if current_level <= TOTAL_LEVELS:
 		current_level += 1
 	
 func get_level() -> Node:
-	if current_level > total_scene_levels:
-		return null
-	else:
-		var level = load("res://levels/level_" + str(current_level) + ".tscn")
-		return level.instance()
+	var level = load("res://levels/level_" + str(current_level) + ".tscn")
+	return level.instance()
 

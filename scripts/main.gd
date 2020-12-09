@@ -25,11 +25,10 @@ func to_next_level() -> void:
 	#Remove all scenes from levels
 	LOADER.level_up()
 	for level in $Levels.get_children():
-		$Levels.remove_child(level)
-		level.free()
+		level.queue_free()
 		
 	#Load next level and append
-	if LOADER.get_level() != null:
+	if LOADER.current_level <= LOADER.TOTAL_LEVELS:
 		$Levels.add_child(LOADER.get_level())
 	else:
 		LOADER.current_level = 1

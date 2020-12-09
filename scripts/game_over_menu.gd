@@ -68,7 +68,7 @@ func display_level_cleared_menu() -> void:
 	$Menu.show()
 	$Menu/CenterLabel/LevelPassed.show()
 	
-	if LOADER.current_level == LOADER.total_scene_levels:
+	if LOADER.current_level == LOADER.TOTAL_LEVELS:
 		$Menu/CenterContainer/VBoxContainer/NextLevelButton.hide()
 		$Menu/CenterLabel/LevelPassed.text = "Game Completed"
 	else:
