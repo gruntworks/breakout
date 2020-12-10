@@ -10,6 +10,7 @@ func _ready() -> void:
 	
 func _input(_event) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE) and !menu_opened:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
 		display_pause_menu()
 
@@ -18,10 +19,12 @@ func _on_ExitButton_pressed() -> void:
 	get_tree().quit()
 	
 func _on_PlayAgainButton_pressed() -> void:
+	yield($ButtonClickAudio, "finished")
 	if get_tree().reload_current_scene() != OK:
 		print("Current Scene reload failed")
 	
 func _on_ResumeButton_pressed() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	hide_menu()
 	get_tree().paused = false
 		
@@ -45,6 +48,7 @@ func hide_menu() -> void:
 	$Menu.hide()
 
 func display_game_over_menu() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	menu_opened = true
 	$Menu.show()
 	$Menu/CenterContainer/VBoxContainer/NextLevelButton.hide()
@@ -55,6 +59,7 @@ func display_game_over_menu() -> void:
 	$Menu/CenterContainer/VBoxContainer/ExitButton.show()
 	
 func display_pause_menu() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	menu_opened = true
 	$Menu.show()
 	$Menu/CenterContainer/VBoxContainer/NextLevelButton.hide()
@@ -64,6 +69,7 @@ func display_pause_menu() -> void:
 	$Menu/CenterContainer/VBoxContainer/ExitButton.show()
 
 func display_level_cleared_menu() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	menu_opened = true
 	$Menu.show()
 	$Menu/CenterLabel/LevelPassed.show()

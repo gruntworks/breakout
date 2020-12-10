@@ -4,6 +4,7 @@ var clouds_offset: Vector2 = Vector2.ZERO
 export var cloud_move_multiplier: int = 50
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	clouds_offset = $CloudsNode.position
 	_offset_clouds(get_viewport().get_mouse_position()) #Avoid movement glitch
 

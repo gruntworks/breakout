@@ -6,6 +6,7 @@ var start_countdown: int = 3
 
 func _ready() -> void:
 	$Levels.add_child(LOADER.get_level())
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	game_running = false
 	$CountdownTimer.start()
 
@@ -41,6 +42,7 @@ func start_gameplay() -> void:
 	$Ball.reset_vector()
 	$Player.position = Vector2(512, 568)
 	game_over = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$CountdownTimer.start()
 	$GameMenu.hide_menu()
 	$CountdownLabel.show()

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/short-explosion.wav-e2858f0a0363d7d3a02b1ed6fe08c81c.sample"
+
+[deps]
+
+source_file="res://assets/sound/music/short-explosion.wav"
+dest_files=[ "res://.import/short-explosion.wav-e2858f0a0363d7d3a02b1ed6fe08c81c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

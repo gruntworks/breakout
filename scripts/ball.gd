@@ -7,14 +7,14 @@ export var speed: float = 1.0
 func _ready() -> void:
 	direction = Vector2(-200, -300) * speed
 
-func _process(delta) -> void:
+func _physics_process(delta) -> void:
 	if(!get_parent().game_over and get_parent().game_running ):
 		var collision = move_and_collide(direction * delta)
 
 		if collision:
-#			var reflect = collision.remainder.bounce(collision.normal)
+			var reflect = collision.remainder.bounce(collision.normal)
 			direction = direction.bounce(collision.normal)
-#			move_and_collide(reflect)
+			move_and_collide(reflect)
 			if(collision.collider.name == "Walls" || collision.collider.name == "Player"):
 				$BallHitAudio.play()
 			if(collision and collision.collider.has_method("destroyItem")):
