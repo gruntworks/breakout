@@ -7,7 +7,7 @@ export var speed: float = 1.0
 func _ready() -> void:
 	direction = Vector2(-200, -300) * speed
 
-func _physics_process(delta) -> void:
+func _process(delta) -> void:
 	if(!get_parent().game_over and get_parent().game_running ):
 		var collision = move_and_collide(direction * delta)
 
