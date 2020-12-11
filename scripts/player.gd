@@ -16,8 +16,8 @@ func _ready() -> void:
 	player_scale = $Sprite.scale
 	player_y_pos = $Sprite.global_position.y
 	
-	player_start_limit = player_size.x * player_scale.x / 2 + 10
-	player_end_limit =  get_viewport_rect().size.x - player_size.x * player_scale.x / 2 + 10
+	player_start_limit = player_size.x * player_scale.x / 2
+	player_end_limit =  get_viewport_rect().size.x - player_size.x * player_scale.x / 2
 
 func _process(delta) -> void:
 	if not get_parent().game_over:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/backgrounds/cloud_bg.png" type="Texture" id=1]
 [ext_resource path="res://assets/arrowBack_hover.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scripts/level_select.gd" type="Script" id=9]
 [ext_resource path="res://assets/sound/retro_hover.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/sound/select_click.wav" type="AudioStream" id=11]
+[ext_resource path="res://scenes/Fade.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 49
@@ -133,6 +134,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Fade" parent="." instance=ExtResource( 12 )]
+
 [node name="Audio" type="Node" parent="."]
 
 [node name="ButtonHoverAudio" type="AudioStreamPlayer" parent="Audio"]
@@ -142,3 +145,5 @@ stream = ExtResource( 10 )
 stream = ExtResource( 11 )
 [connection signal="mouse_entered" from="BackButton" to="." method="_on_BackButton_mouse_entered"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+
+[editable path="Fade"]

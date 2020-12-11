@@ -15,8 +15,10 @@ func _input(event) -> void:
 func _on_PlayButton_pressed() -> void:
 	$Audio/ButtonClick.play()
 	yield($Audio/ButtonClick, "finished")
-	$FadeIn.show()
-	$FadeIn.fade_in()
+	$Fade.fade_out()
+	yield($Fade/tween, "tween_completed")
+	if get_tree().change_scene("res://scenes/Main.tscn") != OK:
+		print("Main scene load failed")
 
 func _offset_clouds(position: Vector2) -> void:
 	clouds_offset.x = - position.x / get_viewport().size.x * cloud_move_multiplier
@@ -34,15 +36,13 @@ func _on_Exit_Button_pressed() -> void:
 	yield($Audio/ButtonClick, "finished")
 	get_tree().quit()
 
-
-func _on_PlayButton_mouse_entered() -> void:
+func _on_Button_mouse_entered() -> void:
 	$Audio/ButtonHover.play()
-
-
-func _on_Exit_Button_mouse_entered() -> void:
-	$Audio/ButtonHover.play()
-
 
 func _on_LevelSelect_pressed() -> void:
+	$Audio/ButtonClick.play()
+	yield($Audio/ButtonClick, "finished")
+	$Fade.fade_out()
+	yield($Fade/tween,"tween_completed")
 	if get_tree().change_scene("res://scenes/LevelSelect.tscn") != OK:
 		print("Level Select scene failed to load")

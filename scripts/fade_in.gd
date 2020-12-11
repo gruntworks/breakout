@@ -1,9 +1,9 @@
-extends ColorRect
-
-signal fade_finished
+extends CanvasLayer
 
 func fade_in() -> void:
-	$AnimationPlayer.play("fade_in")
+	$tween.interpolate_property($TransitionShader.material, "shader_param/cutoff", 0.0, 1.0, 1.0, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	$tween.start()
 
-func _on_AnimationPlayer_animation_finished(_anim_name) -> void:
-	emit_signal("fade_finished")
+func fade_out() -> void:
+	$tween.interpolate_property($TransitionShader.material, "shader_param/cutoff", 1.0, 0.0, 0.7, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	$tween.start()

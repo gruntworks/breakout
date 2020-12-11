@@ -5,6 +5,7 @@ var game_over: bool = false
 var start_countdown: int = 3
 
 func _ready() -> void:
+	$Fade.fade_in()
 	$Levels.add_child(LOADER.get_level())
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	game_running = false
@@ -43,8 +44,10 @@ func start_gameplay() -> void:
 	$Player.position = Vector2(512, 568)
 	game_over = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	$CountdownTimer.start()
 	$GameMenu.hide_menu()
+	$GameMenu/Fade.fade_in()
+	yield($GameMenu/Fade/tween, "tween_completed")
+	$CountdownTimer.start()
 	$CountdownLabel.show()
 
 func _on_CountdownTimer_timeout() -> void:
