@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/button_background.png" type="Texture" id=1]
 [ext_resource path="res://assets/button_background_hover.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Fade.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/Steinberg.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://scripts/game_over_menu.gd" type="Script" id=5]
 [ext_resource path="res://assets/sound/select_click.wav" type="AudioStream" id=6]
@@ -189,8 +188,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0.388235, 0.945098, 1, 1 )
 text = "LEVEL CLEARED"
 
-[node name="Fade" parent="." instance=ExtResource( 3 )]
-
 [node name="ButtonHoverAudio" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
@@ -202,6 +199,6 @@ stream = ExtResource( 6 )
 [connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/PlayAgainButton" to="." method="_on_PlayAgainButton_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
-[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]

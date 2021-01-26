@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/shaders/masks/transitionSampler.png" type="Texture" id=1]
+[ext_resource path="res://assets/shaders/masks/transitionSampler2.png" type="Texture" id=1]
 [ext_resource path="res://scripts/fade_in.gd" type="Script" id=2]
 [ext_resource path="res://assets/shaders/scene_transition.shader" type="Shader" id=3]
 

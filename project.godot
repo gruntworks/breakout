@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 JUKEBOX="*res://autoload/MusicController.tscn"
 LOADER="*res://autoload/scene_loader.gd"
+FADE="*res://autoload/Fade.tscn"
 
 [display]
 

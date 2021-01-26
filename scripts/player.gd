@@ -10,6 +10,13 @@ var player_y_pos: float
 var player_start_limit: float
 var player_end_limit: float
 
+#JUMPING VARIABLES
+
+const GRAVITY = 1000
+const JUMP_FORCE = 500
+var speed_y: float = 0
+var is_jumping: bool = false
+
 func _ready() -> void:
 	speed = 600
 	player_size = $Sprite.texture.get_size()
@@ -19,7 +26,7 @@ func _ready() -> void:
 	player_start_limit = player_size.x * player_scale.x / 2
 	player_end_limit =  get_viewport_rect().size.x - player_size.x * player_scale.x / 2
 
-func _process(delta) -> void:
+func _physics_process(delta) -> void:
 	if not get_parent().game_over:
 		# ARROW MOVEMENT
 #		var velocity: Vector2 = Vector2()
@@ -36,6 +43,28 @@ func _process(delta) -> void:
 		position.x = get_viewport().get_mouse_position().x
 #		# Dont allow player to exit the screen on x axis
 		position.x = clamp(position.x, player_start_limit, player_end_limit)
-		# Keep the Y position always the same
-		position.y = player_y_pos
+		
+		#JUMPING	
+		
+		if is_jumping:
+			position.y += speed_y * delta
+			speed_y += GRAVITY * delta
 
+		# Bottom Y limit for the player
+			if position.y >= player_y_pos:
+				position.y = player_y_pos
+				is_jumping = false
+
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed and not is_jumping:
+			speed_y = -JUMP_FORCE
+			is_jumping = true
+			
+			
+			
+			
+			
+			
+			

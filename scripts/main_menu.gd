@@ -15,8 +15,8 @@ func _input(event) -> void:
 func _on_PlayButton_pressed() -> void:
 	$Audio/ButtonClick.play()
 	yield($Audio/ButtonClick, "finished")
-	$Fade.fade_out()
-	yield($Fade/tween, "tween_completed")
+	FADE.fade_out()
+	yield(FADE.get_node("tween"), "tween_completed")
 	if get_tree().change_scene("res://scenes/Main.tscn") != OK:
 		print("Main scene load failed")
 
@@ -42,7 +42,7 @@ func _on_Button_mouse_entered() -> void:
 func _on_LevelSelect_pressed() -> void:
 	$Audio/ButtonClick.play()
 	yield($Audio/ButtonClick, "finished")
-	$Fade.fade_out()
-	yield($Fade/tween,"tween_completed")
+	FADE.fade_out()
+	yield(FADE.get_node("tween"), "tween_completed")
 	if get_tree().change_scene("res://scenes/LevelSelect.tscn") != OK:
 		print("Level Select scene failed to load")

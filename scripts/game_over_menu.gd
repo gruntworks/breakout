@@ -20,8 +20,8 @@ func _on_ExitButton_pressed() -> void:
 	
 func _on_PlayAgainButton_pressed() -> void:
 	yield($ButtonClickAudio, "finished")
-	$Fade.fade_out()
-	yield($Fade/tween, "tween_completed")
+	FADE.fade_out()
+	yield(FADE.get_node("tween"), "tween_completed")
 	if get_tree().reload_current_scene() != OK:
 		print("Current Scene reload failed")
 	
@@ -32,13 +32,16 @@ func _on_ResumeButton_pressed() -> void:
 		
 func _on_MainMenuButton_pressed() -> void:
 	yield($ButtonClickAudio, "finished")
+	FADE.fade_out()
+	yield(FADE.get_node("tween"), "tween_completed")
 	if get_tree().change_scene("res://scenes/MainMenu.tscn") != OK:
 		print("Main Menu scene load failed")
-
+	FADE.fade_in()
+	
 func _on_NextLevelButton_pressed() -> void:
 	yield($ButtonClickAudio, "finished")
-	$Fade.fade_out()
-	yield($Fade/tween, "tween_completed")
+	FADE.fade_out()
+	yield(FADE.get_node("tween"), "tween_completed")
 	get_parent().to_next_level()
 
 func _on_menu_button_hover(_button) -> void:

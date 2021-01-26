@@ -14,7 +14,7 @@ func _process(delta) -> void:
 		if collision:
 			var reflect = collision.remainder.bounce(collision.normal)
 			direction = direction.bounce(collision.normal)
-			move_and_collide(reflect)
+			var _velocity = move_and_collide(reflect)
 			if(collision.collider.name == "Walls" || collision.collider.name == "Player"):
 				$BallHitAudio.play()
 			if(collision and collision.collider.has_method("destroyItem")):
